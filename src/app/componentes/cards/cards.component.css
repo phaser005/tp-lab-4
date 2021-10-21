@@ -1,0 +1,25 @@
+
+
+/*CARDS*/
+section{
+    width: auto;
+}
+
+section {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.1);
+    padding: 28px 24px;
+    width: 400px;
+    height: 500px;
+    margin: 0;
+}
+section {
+    margin: 0 0 24px;
+    padding: 28px;
+}
+section {
+    display: inline-block;
+    border-radius: .375em;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 .0625em .125em 0 rgba(0,0,0,.1);
+}

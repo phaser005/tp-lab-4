@@ -1,0 +1,28 @@
+<section class="access_cards">
+
+    <card
+    imgSource="../../../assets/registro/paciente.png"
+    cardTitle="Accede a nuestros beneficios"
+    cardParagraph=""
+    buttonText="Comienza tu atención con nosotros"
+    buttonLink="/alta-paciente">      
+    </card>
+
+    <card
+    imgSource="../../../assets/registro/especialista.png"
+    cardTitle="Comienza tu carrera con nostros"
+    cardParagraph=""
+    buttonText="Registrate como especialista"
+    buttonLink="/alta-especialista">    
+    </card>
+
+    <card
+    *ngIf="verificarUsuario() === 'administrador' ||  verificarUsuario() === 'paciente'"
+    imgSource="../../../assets/registro/admin.png"
+    cardTitle="Brindanos tus servicios"
+    cardParagraph=""
+    buttonText="Registrate como administrador"
+    buttonLink="/alta-administrador">    
+    </card>
+
+</section>

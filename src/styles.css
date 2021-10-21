@@ -1,0 +1,8 @@
+body{
+
+    background-image: url('https://static.vecteezy.com/system/resources/previews/000/168/937/original/vector-medical-and-healthcare-background-with-electrocardiogram.jpg');
+    background-size: cover;
+
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

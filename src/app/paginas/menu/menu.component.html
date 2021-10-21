@@ -1,0 +1,50 @@
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://github.com/phaser005">
+      <img src="../assets/hospital.png" alt="" width="30" class="d-inline-block align-text-top">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngIf="verificarUsuario() === 'administrador' ">
+          <a class="nav-link active" aria-current="page" href="/usuarios">Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/mi-perfil">Mi perfil</a>
+        </li>
+        <li class="nav-item" *ngIf="verificarUsuario() === 'administrador' ||  verificarUsuario() === 'paciente'">
+          <a class="nav-link active" aria-current="page" href="turnos/solicitar-turno">Solicitar Turno</a>
+        </li>
+        <li class="nav-item" *ngIf="verificarUsuario() === 'paciente' ||  verificarUsuario() === 'especialista'">
+          <a class="nav-link active" aria-current="page" href="turnos/mis-turnos">Mis Turnos</a>
+        </li>
+        <li class="nav-item" *ngIf="verificarUsuario() === 'administrador' ">
+          <a class="nav-link active" aria-current="page" href="/turnos/turnos">Turnos</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" class="btn btn-outline-secondary me-2" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Registrarse
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/alta-paciente">Como Paciente</a>
+            <a class="dropdown-item" href="/alta-especialista">Como Especialista</a>
+            <a *ngIf="verificarUsuario() === 'administrador' "
+            class="dropdown-item" href="/alta-administrador">Como Administrador</a>
+          </div>
+        </div>
+      </form>
+      <form class="d-flex" *ngIf="logInVerification() === false">
+        <a class="btn btn-outline-primary me-2" routerLink='/login' role="button">Iniciar Sesión</a>
+      </form>
+      <form class="d-flex" *ngIf="logInVerification()">
+        <a class="btn btn-outline-primary me-2" (click)="logOut()" role="button">Cerrar Sesión</a>
+      </form>
+    </div>
+  </div>
+</nav>

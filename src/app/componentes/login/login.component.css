@@ -1,0 +1,10 @@
+.fab{
+    width: 50px;
+    border-radius: 5em;
+    margin-top: -12px;
+}
+
+.horizontal{
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,27 @@
+.title{
+    padding-top: 20px;
+    font-family: 'Segoe UI';
+}
+
+.access_cards {
+    max-width: 65em;
+    margin-top: -168px;
+}
+.access_cards {
+    max-width: 54em;
+    margin: -148px auto 64px;
+        margin-top: -148px;
+}
+.access_cards {
+    position: relative;
+    max-width: 24.75em;
+    margin: 0px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+*, ::after, ::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}

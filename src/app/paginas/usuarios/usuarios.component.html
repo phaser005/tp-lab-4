@@ -1,0 +1,33 @@
+<h2 align="center"> Listado de usuarios registrados</h2>
+
+<div align="center">
+    <a class="btn btn-outline-primary me-2" routerLink='/alta-administrador' role="button">Crear nuevo Administrador</a>
+</div>
+<br>
+<div class="scroll" align="center">
+    <div *ngFor="let usuario of listaUsuarios">
+        <p>Tipo: {{usuario.tipo}}</p>
+        <p>Nombre: {{usuario.nombre}}</p>
+        <p>Apellido: {{usuario.apellido}}</p>
+        <p>DNI: {{usuario.DNI}}</p>
+        <p>Obra Social: {{usuario.obraSocial}}</p>
+        <p>Especialidad: {{usuario.especialidad}}</p>
+        <p>Email: {{usuario.email}}</p>
+        <p>Password: {{usuario.password}}</p>
+        <img src={{usuario.imagen1}} width="10%">
+        <div *ngIf="usuario.tipo === 'paciente'">
+            <img src={{usuario.imagen2}} width="10%">
+        </div>
+        <p>Esta habilitado: {{usuario.habilitado}}</p>
+        <div *ngIf="usuario.tipo === 'especialista'">
+            <div *ngIf="usuario.habilitado === true">
+                <button (click)="deshabilitarUsuario(usuario.email)">DESAHABILITAR</button>
+            </div>
+            <div *ngIf="usuario.habilitado === false">
+                <button (click)="habilitarUsuario(usuario.email)">HABILITAR</button>
+            </div>
+        </div>
+        <hr>
+        <hr>
+    </div>
+</div>

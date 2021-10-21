@@ -1,0 +1,52 @@
+<div class="container">
+
+    <form [formGroup]="form" (ngSubmit)="LogMeIn()">
+
+        <div class="row">
+            <div class="col-md-12 mb-5" align="center">
+                <br>
+                <h2 appFontStyle> La Clínica Online - Inicio de Sesión </h2>
+            </div>
+        </div>
+
+        <div class="row formulario">
+
+            <div class="col-md-12 mb-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Ingrese su Email - Ej: ejemplo@gmail.com" formControlName="email">
+            </div>
+
+            <div class="col-md-12 mb-6">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" formControlName="password">
+            </div>
+            
+            
+        </div>
+
+      <div class="row">
+        <div class="col-md-12 d-grid gap-2">
+            <br>
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.valid">
+            Ingresar
+          </button>
+        </div>
+      </div>
+
+    <br>
+    <h2 align="center" appFontStyle> Acceso rapido </h2>
+    <br>
+
+    <div class="horizontal" align="center">
+        <div *ngFor="let usuario of listaUsuarios">
+            <button mat-fab (click)="AutoCompleteValidUser(usuario.email, usuario.password)">
+                <img appButtonStyle
+                src={{usuario.imagen1}}>
+            </button>
+        </div>
+    </div>
+
+
+    </form>
+    
+  </div>
